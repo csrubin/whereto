@@ -1,63 +1,120 @@
 <!doctype html>
 <html lang="en">
   <head>
+    <!--Meta settings -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 
-  <title>WhereTo</title>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+    <title>WhereTo</title>
   </head>
+
   <body>
+    <!--Title-->
     <div class="jumbotron text-center">
       <h1>WhereTo</h1>
-      <p>Simple, data-driven bar suggestion app for Columbus, OH.</p>
+      <p>Simple bar suggestion app for Columbus, OH.</p>
     </div>
 
+    <!--Basic navigation-->
+    <!--
+    <div class="container">
+      <div class="row">
+        <div class="col-12 text-center">
+          <nav class="nav nav-pills nav-justified">
+            <li class="nav-item">
+              <a class="nav-link active" href="#db">Database</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link"  href="#form">Form</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#about">About</a>
+            </li>
+          </nav>
+        </div>
+      </div>
+    </div>
+
+    Full database display-->
+    <!--
+    <div class="container">
+      <p>Full list of available bars and restaurants in Columbus</p>
+      <table class="table table-hover">
+        <thread>
+          <tr>
+            <th>Name</th>
+            <th>Vibe</th>
+            <th>Price</th>
+            <th>Distance</th>
+          </tr>
+      </table>
+    </div> -->
+
+
+    <!--Form-->
+    <div class="container">
+      <form>
+        <div class="form-group">
+          <label for="bar-type">Bar Type</label>
+          <select class="form-control" id="bar-type">
+            <option>Restaurant</option>
+            <option>Music</option>
+            <option>Dive</option>
+            <option>Karaoke</option>
+            <option>Campus</option>
+            <option>High-end</option>
+            <option>Themed</option>
+            <option>Dance</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="drink-type">What do you like to drink?</label>
+          <select class="form-control" id="drink-type">
+            <option>Margaritas</option>
+            <option>Gin</option>
+            <option>Tequila</option>
+            <option>Whiskey</option>
+            <option>Beer</option>
+          </select>
+        <div class="form-group">
+          <label for="price">Price</label>
+          <select class="form-control" id="price">
+            <option>$</option>
+            <option>$$</option>
+            <option>$$$</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="distance">Distance (radius in miles)</label>
+          <select class="form-control" id="distance">
+            <option>1</option>
+            <option>2</option>
+            <option>3</option>
+            <option>4</option>
+            <option>5</option>
+            <option>6</option>
+            <option>7</option>
+            <option>8</option>
+            <option>9</option>
+            <option>10</option>
+          </select>
+        </div>
+      </form>
+    </div>
+    <!--Initial "go" button-->
     <div class="container">
       <div class="row">
         <div class="col-12 text-center">
           <button type="button" class="btn btn-outline-secondary btn-lg">Where to?</button>
         </div>
       </div>
-
-    <div class="container">
-      <div class="row">
-        <div class="col-12 text-center">
-          <nav class="nav nav-pills nav-justified" role="tablist">
-            <li class="nav-item">
-              <a class="nav-link active" data-toggle="pill" href="#db">Database</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" data-toggle="pill" href="#form">Form</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" data-toggle="pill" href="#about">About</a>
-            </li>
-          </nav>
-
-        </div>
-      </div>
-
-    <div class="container">
-      <h4>Establishments</h4>
-      <p>Full list of available bars and restaurants in Columbus</p>
-      <table class="table table-hover">
-        <thread>
-          <tr>
-            <th>Name</th> <!--make href to link to bar website -->
-            <th>Vibe</th>
-            <th>Price</th>
-            <th>Distance</th> <!-- potentially time to destination?-->
-          </tr>
-      </table>
-    </div>
-
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
   </body>
 </html>
