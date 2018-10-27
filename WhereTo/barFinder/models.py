@@ -1,10 +1,7 @@
 from django.db import models
 
 # Create your models here.
-from django.db import models
-
-# Create your models here.
-class Establishment(models.model):
+class Establishment(models.Model):
     name = models.CharField(unique = True)
     address = models.CharField()
     zipcode = models.IntegerField(default = "43210")
@@ -21,12 +18,13 @@ class Establishment(models.model):
     est_type = models.CharField(max_length = 2,choices=EST_TYPE_CHOICES)
     open_time = models.IntegerField(blank = True)
     close_time = models.IntegerField(blank = True)
-    est_url = models.CharField(blank = True)
+    est_url = models.URLField(blank = True)
     
-class Deals(models.model):
-    est_id = models.ForeignKey(Establishment,
+class Deals(models.Model):
+    est = models.ForeignKey(Establishment,
                                on_delete=models.CASCADE,
-                               verbose_name="Establishment")
+                               verbose_name="Establishment FK",
+                               )
     start_time = models.IntegerField()
     end_time = models.IntegerField()
     item = models.CharField()
