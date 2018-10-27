@@ -2,8 +2,8 @@ from django.db import models
 
 # Create your models here.
 class Establishment(models.Model):
-    name = models.CharField(unique = True,max_length = 400)
-    address = models.CharField(max_length = 400)
+    name = models.CharField(unique = True,max_length = 400,blank = True)
+    address = models.CharField(max_length = 400,blank = True)
     zipcode = models.IntegerField(default = "43210")
     EST_TYPE_CHOICES = (
     ('R', 'Restaurant'),
@@ -15,7 +15,8 @@ class Establishment(models.Model):
     ('T', 'Themed'),
     ('DN', 'Dance'),
 )
-    est_type = models.CharField(max_length = 2,choices=EST_TYPE_CHOICES)
+    est_type = models.CharField(max_length=2,
+                                choices=EST_TYPE_CHOICES,blank = True)
     open_time = models.IntegerField(blank = True)
     close_time = models.IntegerField(blank = True)
     est_url = models.URLField(blank = True)
@@ -25,11 +26,11 @@ class Deals(models.Model):
                                on_delete=models.CASCADE,
                                verbose_name="Establishment FK",
                                )
-    start_time = models.IntegerField()
-    end_time = models.IntegerField()
-    item = models.CharField(max_length = 200)
+    start_time = models.IntegerField(blank = True)
+    end_time = models.IntegerField(blank = True)
+    item = models.CharField(max_length = 200,blank = True)
     size = models.CharField(blank = True,max_length = 100)
-    cost = models.CharField(max_length = 10)
+    cost = models.CharField(max_length = 10,blank = True)
     DAY_CHOICES = (
     ('1', 'Monday'),
     ('2', 'Tuesday'),
@@ -39,4 +40,4 @@ class Deals(models.Model):
     ('6', 'Saturday'),
     ('7', 'Sunday'),
 )
-    day = models.IntegerField(choices = DAY_CHOICES)
+    day = models.IntegerField(choices = DAY_CHOICES,blank = True)
