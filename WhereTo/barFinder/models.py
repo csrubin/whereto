@@ -2,8 +2,8 @@ from django.db import models
 
 # Create your models here.
 class Establishment(models.Model):
-    name = models.CharField(unique = True)
-    address = models.CharField()
+    name = models.CharField(unique = True,max_length = 400)
+    address = models.CharField(max_length = 400)
     zipcode = models.IntegerField(default = "43210")
     EST_TYPE_CHOICES = (
     ('R', 'Restaurant'),
@@ -27,9 +27,9 @@ class Deals(models.Model):
                                )
     start_time = models.IntegerField()
     end_time = models.IntegerField()
-    item = models.CharField()
-    size = models.CharField(blank = True)
-    cost = models.CharField()
+    item = models.CharField(max_length = 200)
+    size = models.CharField(blank = True,max_length = 100)
+    cost = models.CharField(max_length = 10)
     DAY_CHOICES = (
     ('1', 'Monday'),
     ('2', 'Tuesday'),
